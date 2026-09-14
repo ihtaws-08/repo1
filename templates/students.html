@@ -1,2 +1,221 @@
 <!DOCTYPE html>
-<html><h>hi</h></html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        .header {
+            background-color: #1f2937;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .college-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .system-name {
+            font-size: 16px;
+        }
+
+        .main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .page-title h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .page-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .search-section {
+            background-color: white;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .search-button {
+            padding: 12px 25px;
+            background-color: #1f2937;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #111827;
+        }
+
+        .table-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .no-data {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 11px 20px;
+            background-color: #374151;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #111827;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="college-name">College Student Services</div>
+        <div class="system-name">Student Management System</div>
+    </header>
+
+    <main class="main">
+        <div class="page-title">
+            <h1>Student Records</h1>
+            <p>View and search registered student information.</p>
+        </div>
+
+        <div class="search-section">
+            <form action="/students" method="GET" class="search-form">
+                <input 
+                    type="text" 
+                    name="search" 
+                    class="search-input" 
+                    placeholder="Search by name, email, phone or department" 
+                    value="{{ search or '' }}"
+                    aria-label="Search students"
+                >
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+
+        {% if students %}
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.department }}</td>
+                        <td>{{ student.year }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="no-data">
+            No student records found.
+        </div>
+        {% endif %}
+
+        <a href="/" class="back-button">Back to Home</a>
+    </main>
+
+    <footer class="footer">
+        © 2026 College Student Services | Student Management System
+    </footer>
+
+</body>
+</html>
