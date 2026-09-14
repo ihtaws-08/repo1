@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #1f2937;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #17365d;
+            color: white;
+            padding: 22px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .college-name {
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .system-name {
+            font-size: 14px;
+            color: #dbe7f5;
+        }
+
+        /* MAIN */
+
+        .main {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        .card {
+            width: 480px;
+            background: white;
+
+            padding: 42px;
+
+            border-radius: 8px;
+
+            border: 1px solid #e1e5ea;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .card h1 {
+            margin: 0 0 8px;
+
+            font-size: 27px;
+            font-weight: 600;
+
+            color: #17365d;
+        }
+
+        .line {
+            width: 45px;
+            height: 3px;
+
+            background: #2f75b5;
+
+            margin: 15px 0 20px;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.6;
+
+            color: #667085;
+
+            margin-bottom: 30px;
+        }
+
+        /* OPTIONS */
+
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 20px;
+
+            margin-bottom: 14px;
+
+            border: 1px solid #dfe3e8;
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            color: #1f2937;
+
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            border-color: #2f75b5;
+            background: #f8fbff;
+        }
+
+        .option-title {
+            font-size: 15px;
+            font-weight: 600;
+
+            color: #17365d;
+        }
+
+        .option-text {
+            margin-top: 5px;
+
+            font-size: 12px;
+            color: #7a8491;
+        }
+
+        .arrow {
+            font-size: 20px;
+            color: #2f75b5;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+
+            margin-top: 28px;
+
+            font-size: 11px;
+            color: #8a929c;
+        }
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 20px;
+            }
+
+            .system-name {
+                display: none;
+            }
+
+            .card {
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="college-name">
+            College Student Services
+        </div>
+
+        <div class="system-name">
+            Student Management System
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <div class="card">
+
+            <h1>Student Registration</h1>
+
+            <div class="line"></div>
+
+            <p class="description">
+                Welcome to the Student Registration System.
+                Please select an option below to register a student
+                or view the existing student records.
+            </p>
+
+
+            <!-- REGISTER -->
+
+            <a href="/register" class="option">
+
+                <div>
+                    <div class="option-title">
+                        Register Student
+                    </div>
+
+                    <div class="option-text">
+                        Enter and submit student details
+                    </div>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- VIEW STUDENTS -->
+
+            <a href="/students" class="option">
+
+                <div>
+                    <div class="option-title">
+                        View Students
+                    </div>
+
+                    <div class="option-text">
+                        View registered student records
+                    </div>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <div class="footer">
+                Student Registration System
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>
+
