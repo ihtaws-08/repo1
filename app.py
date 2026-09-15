@@ -79,22 +79,23 @@ def register():
 
 
     # Insert student
-    query = """
-        INSERT INTO students
-        (name, age, phone, email, department, year)
-        VALUES (%s, %s, %s, %s, %s, %s)
-    """
+    else:
+        query = """
+            INSERT INTO students
+            (name, age, phone, email, department, year)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """
 
-    values = (
-        name,
-        int(age),
-        phone,
-        email,
-        department,
-        year
-    )
+        values = (
+            name,
+            int(age),
+            phone,
+            email,
+            department,
+            year
+        )
 
-    cursor.execute(query, values)
+        cursor.execute(query, values)
     db.commit()
 
     cursor.close()
