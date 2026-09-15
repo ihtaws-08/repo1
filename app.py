@@ -96,6 +96,7 @@ def register():
         )
 
         cursor.execute(query, values)
+
     db.commit()
 
     cursor.close()
